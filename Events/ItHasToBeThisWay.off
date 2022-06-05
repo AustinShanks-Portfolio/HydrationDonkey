@@ -1,0 +1,18 @@
+let threshold = 5
+
+module.exports = {
+	name: 'messageCreate',
+	execute(message) {
+        if (message.author.bot) return;
+        if (message.content.toLowerCase().includes('mian') || message.content.toLowerCase().includes('mianceden') || message.content.toLowerCase().includes('124686534346539012')) {
+            let chance = Math.floor(Math.random() * 101)
+            console.log(`Chance to Trigger ItHasToBeThisWay: Rolled: ${chance}, Threshold: ${threshold}`)
+            if (chance <= threshold) {
+                message.reply("This is a reminder that Mian is simultaneously the Strongest RI Raider, and the Weakest Utsu Raider\nhttps://c.tenor.com/VbsYgZWWLaQAAAAd/senator-armstrong-metal-gear-rising.gif")
+                threshold = 5
+            } else {
+                threshold += 1
+            }
+        }
+	},
+};
